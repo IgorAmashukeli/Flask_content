@@ -1,0 +1,46 @@
+<!DOCTYPE html>
+<html>
+  <head>
+    <script src="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.js"></script>
+    <link
+      href="https://fonts.googleapis.com/css2?family=Lilita+One&display=swap"
+      rel="stylesheet"
+    />
+    <script src="https://cdnjs.cloudflare.com/ajax/libs/moment.js/2.29.4/moment.min.js"></script>
+    <script src="{{ url_for('static', filename='secret_key.js') }}"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="https://www.gstatic.com/firebasejs/ui/4.4.0/firebase-ui-auth.css"
+    />
+    <title>Social</title>
+    <script src="{{ url_for('static', filename='script.js') }}"></script>
+    <link
+      type="text/css"
+      rel="stylesheet"
+      href="{{ url_for('static', filename='style.css') }}"
+    />
+  </head>
+  <body>
+    <div class="main">
+      <div class="left" hidden="true">
+        <h1 style="color: darkblue">Social</h1>
+        <button class="sign-out" id="sign-out" hidden="true">Sign out</button>
+      </div>
+      <div class="center">
+        <p id="sign-in" hidden="false">Sign in/Sign up</p>
+        <div id="firebase-auth-container"></div>
+        <div id="login-info" hidden="true">
+          {%if accept%} {% elif error_message %}
+          <p>Error Message: {{ error_message }}</p>
+          {% endif %}
+        </div>
+      </div>
+      <div class="right"></div>
+    </div>
+    <script src="https://www.gstatic.com/firebasejs/7.14.5/firebase-app.js"></script>
+    <script src="https://www.gstatic.com/firebasejs/7.8.0/firebase-auth.js"></script>
+    <script src="{{ url_for('static', filename='app-setup.js') }}"></script>
+    <script src="{{ url_for('static', filename='calendar.js') }}"></script>
+  </body>
+</html>
